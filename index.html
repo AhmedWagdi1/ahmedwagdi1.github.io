@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innoventiq | Innovative Utility Tools for Your Smartphone</title>
+    <meta name="description" content="Official developer portfolio of Innoventiq. Explore our range of simple, powerful, and ad-supported utility apps for Android.">
+    <meta name="keywords" content="Innoventiq, Utility Apps, Android Tools, Compass, QR Scanner, Flashlight, Smart Ruler">
+    
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- AOS Library for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.15), transparent 40%);
+        }
+        body {
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-200">
+    <div class="fixed inset-0 -z-10 hero-gradient"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 py-4 bg-gray-950/80 backdrop-blur-md border-b border-white/5">
+        <div class="container px-6 mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center text-white font-display font-bold">I</div>
+                <span class="text-xl font-display font-bold tracking-tight text-white group-hover:text-primary-400 transition-colors">Innoventiq</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#apps" class="text-sm font-medium hover:text-primary-400 transition-colors">Our Apps</a>
+                <a href="#contact" class="text-sm font-medium hover:text-primary-400 transition-colors">Support</a>
+                <a href="https://play.google.com/store/apps/developer?id=Innoventiq+Solutions" target="_blank" class="px-5 py-2 bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold rounded-full transition-all flex items-center gap-2 shadow-lg shadow-primary-900/40">
+                    <i data-lucide="play" class="w-4 h-4"></i>
+                    Google Play
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-32 overflow-hidden px-6">
+        <div class="container mx-auto text-center max-w-4xl" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
+                Innovative Utility Tools for Your <span class="bg-gradient-to-r from-primary-400 to-indigo-500 bg-clip-text text-transparent">Smartphone</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
+                Simple, powerful, and ad-supported tools designed to make your daily tasks easier. Join thousands of users who trust our precision and speed.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#apps" class="w-full sm:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-2xl transition-all shadow-xl shadow-primary-900/40 flex items-center justify-center gap-3">
+                    Discover Apps
+                    <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:info@innoventiq.com" class="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-3">
+                    Support
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Grid -->
+    <section id="apps" class="py-24 px-6 relative">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6" data-aos="fade-up">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl font-display font-bold text-white mb-4">Our Featured Apps</h2>
+                    <p class="text-gray-400">Handcrafted utility tools optimized for performance and reliability. Download now on Google Play.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-primary-500/10 text-primary-400 border border-primary-500/20 rounded-full text-xs font-bold uppercase tracking-wider">Top Rated</span>
+                    <span class="px-3 py-1 bg-green-500/10 text-green-400 border border-green-500/20 rounded-full text-xs font-bold uppercase tracking-wider">Ad Supported</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Compass -->
+                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-6 relative w-20 h-20">
+                        <img src="https://play-lh.googleusercontent.com/ijIsb7g0AIX2SYfbgpLWLzGgXWpgHoKfZHyQDT16s_qCRNYah4IO-UKNiGqVOGd5kJs6OIGmsGxqmRNAL-mfYQ=s512" alt="Compass Icon" class="rounded-2xl shadow-xl shadow-black/40">
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-3">Compass – True North</h3>
+                    <p class="text-gray-400 text-sm mb-8 flex-grow">Accurate and reliable navigation. Find your way with ease using magnetic and true north indicators.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.compassTrueNorth" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
+                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+                        Get it on Play
+                    </a>
+                </article>
+
+                <!-- QR Scanner -->
+                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-6 relative w-20 h-20">
+                        <img src="https://play-lh.googleusercontent.com/ZG-I9pON--8CJXIFrjEvKFEozbTIPJR8KfsLS5rABJODsPtBC2Kzddh0rkCwWbLUXAw=s512" alt="QR Scanner Icon" class="rounded-2xl shadow-xl shadow-black/40">
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-3">QR & Barcode Scanner</h3>
+                    <p class="text-gray-400 text-sm mb-8 flex-grow">Lightning-fast scanning and code generation. Support for all major formats and instant processing.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.qrScanner" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
+                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+                        Get it on Play
+                    </a>
+                </article>
+
+                <!-- Flashlight -->
+                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-6 relative w-20 h-20">
+                        <img src="https://play-lh.googleusercontent.com/ySgJS92qLeAHg55x7IzaqUT0EW7zZNsZdTyRvZjmQyZSGj6fQHvhK5Y2H55N3k5ODuTGCr9WMumh91edA5LX=s512" alt="Flashlight Icon" class="rounded-2xl shadow-xl shadow-black/40">
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-3">Quick Flashlight</h3>
+                    <p class="text-gray-400 text-sm mb-8 flex-grow">The brightest and fastest flashlight tool. One-tap activation with strobe and SOS features.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.quickflashlight" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
+                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+                        Get it on Play
+                    </a>
+                </article>
+
+                <!-- Smart Ruler -->
+                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
+                    <div class="mb-6 relative w-20 h-20">
+                        <img src="https://play-lh.googleusercontent.com/V7YyYgwyKf3iha_HnV6WFYUdUY-9XtuEIPxlTsMXKjvdQy0zaVdvHJ9R4AU_2Xlso1SyBXac_n7P3hN3VvaAuA=s512" alt="Smart Ruler Icon" class="rounded-2xl shadow-xl shadow-black/40">
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-3">Smart Ruler</h3>
+                    <p class="text-gray-400 text-sm mb-8 flex-grow">Precision measurement at your fingertips. Easy-to-use digital ruler for on-the-go dimensions.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.smartRuler" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
+                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+                        Get it on Play
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="pb-24 px-6">
+        <div class="container mx-auto">
+            <div class="glass-card p-12 rounded-[2.5rem] bg-gradient-to-br from-gray-900 to-primary-900/20 text-center" data-aos="fade-up">
+                <i data-lucide="help-circle" class="w-12 h-12 text-primary-400 mx-auto mb-6"></i>
+                <h2 class="text-3xl font-display font-bold text-white mb-4">Need Support?</h2>
+                <p class="text-gray-400 mb-8 max-w-sm mx-auto">Have questions or feedback about our apps? We're here to help you get the most out of our tools.</p>
+                <a href="mailto:info@innoventiq.com" class="inline-flex items-center gap-3 text-2xl font-bold text-white hover:text-primary-400 transition-colors">
+                    info@innoventiq.com
+                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/5 bg-gray-950">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 bg-primary-500 rounded flex items-center justify-center text-white font-display font-bold text-xs">I</div>
+                    <span class="text-lg font-display font-bold text-white">Innoventiq</span>
+                </div>
+                
+                <div class="flex gap-8 text-sm text-gray-500">
+                    <a href="#" class="hover:text-primary-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-400 transition-colors">Terms of Service</a>
+                </div>
+                
+                <p class="text-sm text-gray-600">
+                    &copy; <script>document.write(new Date().getFullYear())</script> Innoventiq Solutions. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+        
+        // Init AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic',
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
