@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innoventiq | Innovative Utility Tools for Your Smartphone</title>
-    <meta name="description" content="Official developer portfolio of Innoventiq. Explore our range of simple, powerful, and ad-supported utility apps for Android.">
-    <meta name="keywords" content="Innoventiq, Utility Apps, Android Tools, Compass, QR Scanner, Flashlight, Smart Ruler">
+    <title>Innoventiq | Professional Apps & Utility Tools for Android</title>
+    <meta name="description" content="Explore our premium portfolio of utility tools, auto trackers, bread-making calculators, and puzzle games developed for Android by Innoventiq.">
+    <meta name="keywords" content="Innoventiq, Android Apps, Utilities, AquaLog, Compass, QR Scanner, Flashlight, Smart Ruler, BinStack, BakerCalc, Core Return, Filter Buddy, Color Sort">
     
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,41 +50,90 @@
     
     <style>
         .glass-card {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card:hover {
             border-color: rgba(56, 189, 248, 0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.2);
         }
         .hero-gradient {
-            background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.15), transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.15), transparent 40%);
+            background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.18), transparent 45%),
+                        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.15), transparent 45%);
         }
         body {
             background-color: #030712;
             color: #f3f4f6;
         }
+        /* Custom scrollbar for screenshots */
+        .screenshot-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+        .screenshot-gallery::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 99px;
+        }
+        .screenshot-gallery::-webkit-scrollbar-thumb {
+            background: rgba(56, 189, 248, 0.3);
+            border-radius: 99px;
+        }
+        .screenshot-gallery::-webkit-scrollbar-thumb:hover {
+            background: rgba(56, 189, 248, 0.6);
+        }
+        
+        /* Modern Native Dialog Styling */
+        dialog {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            color: #f3f4f6;
+            max-width: 52rem;
+            width: 90%;
+            padding: 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            outline: none;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.25s ease-out, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        dialog[open] {
+            opacity: 1;
+            transform: scale(1);
+        }
+        dialog::backdrop {
+            background-color: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            transition: opacity 0.25s ease-out;
+        }
+        dialog[open]::backdrop {
+            opacity: 1;
+        }
+        body:has(dialog[open]) {
+            overflow: hidden;
+        }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-200">
+<body class="font-sans antialiased text-gray-200 min-h-screen flex flex-col justify-between">
     <div class="fixed inset-0 -z-10 hero-gradient"></div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 py-4 bg-gray-950/80 backdrop-blur-md border-b border-white/5">
+    <nav class="sticky top-0 z-40 py-4 bg-gray-950/80 backdrop-blur-md border-b border-white/5">
         <div class="container px-6 mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-2 group cursor-pointer">
-                <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center text-white font-display font-bold">I</div>
+            <div class="flex items-center gap-2 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center text-white font-display font-bold shadow-md shadow-primary-500/25">I</div>
                 <span class="text-xl font-display font-bold tracking-tight text-white group-hover:text-primary-400 transition-colors">Innoventiq</span>
             </div>
-            <div class="hidden md:flex items-center gap-8">
+            <div class="flex items-center gap-8">
                 <a href="#apps" class="text-sm font-medium hover:text-primary-400 transition-colors">Our Apps</a>
                 <a href="#contact" class="text-sm font-medium hover:text-primary-400 transition-colors">Support</a>
                 <a href="https://play.google.com/store/apps/developer?id=Innoventiq+Solutions" target="_blank" class="px-5 py-2 bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold rounded-full transition-all flex items-center gap-2 shadow-lg shadow-primary-900/40">
-                    <i data-lucide="play" class="w-4 h-4"></i>
+                    <i data-lucide="play" class="w-4 h-4 fill-white"></i>
                     Google Play
                 </a>
             </div>
@@ -92,13 +141,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-24 pb-32 overflow-hidden px-6">
+    <section class="relative pt-20 pb-24 overflow-hidden px-6">
         <div class="container mx-auto text-center max-w-4xl" data-aos="fade-up">
-            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
-                Innovative Utility Tools for Your <span class="bg-gradient-to-r from-primary-400 to-indigo-500 bg-clip-text text-transparent">Smartphone</span>
+            <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
+                Innovative Apps & Utility Tools for Your <span class="bg-gradient-to-r from-primary-400 to-indigo-400 bg-clip-text text-transparent">Smart Life</span>
             </h1>
-            <p class="text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
-                Simple, powerful, and ad-supported tools designed to make your daily tasks easier. Join thousands of users who trust our precision and speed.
+            <p class="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Simple, powerful utility helpers, trackers, calculators, and puzzles designed to simplify your routines and elevate your daily experience.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#apps" class="w-full sm:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-2xl transition-all shadow-xl shadow-primary-900/40 flex items-center justify-center gap-3">
@@ -113,97 +162,120 @@
         </div>
     </section>
 
-    <!-- Showcase Grid -->
-    <section id="apps" class="py-24 px-6 relative">
+    <!-- Showcase Grid & Controls -->
+    <section id="apps" class="py-16 px-6 relative">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-6" data-aos="fade-up">
                 <div class="max-w-xl">
-                    <h2 class="text-3xl font-display font-bold text-white mb-4">Our Featured Apps</h2>
-                    <p class="text-gray-400">Handcrafted utility tools optimized for performance and reliability. Download now on Google Play.</p>
+                    <h2 class="text-3xl font-display font-bold text-white mb-3">Explore Our Applications</h2>
+                    <p class="text-gray-400">Discover hand-crafted tools optimized for maximum performance, accuracy, and ease of use.</p>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex flex-wrap gap-2">
                     <span class="px-3 py-1 bg-primary-500/10 text-primary-400 border border-primary-500/20 rounded-full text-xs font-bold uppercase tracking-wider">Top Rated</span>
                     <span class="px-3 py-1 bg-green-500/10 text-green-400 border border-green-500/20 rounded-full text-xs font-bold uppercase tracking-wider">Ad Supported</span>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Compass -->
-                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mb-6 relative w-20 h-20">
-                        <img src="https://play-lh.googleusercontent.com/ijIsb7g0AIX2SYfbgpLWLzGgXWpgHoKfZHyQDT16s_qCRNYah4IO-UKNiGqVOGd5kJs6OIGmsGxqmRNAL-mfYQ=s512" alt="Compass Icon" class="rounded-2xl shadow-xl shadow-black/40">
+            <!-- Search and Filter Controls -->
+            <div class="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-6" data-aos="fade-up" data-aos-delay="100">
+                <!-- Search input -->
+                <div class="relative flex-grow max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i data-lucide="search" class="w-5 h-5 text-gray-500"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Compass – True North</h3>
-                    <p class="text-gray-400 text-sm mb-8 flex-grow">Accurate and reliable navigation. Find your way with ease using magnetic and true north indicators.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.compassTrueNorth" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
-                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
-                        Get it on Play
-                    </a>
-                </article>
+                    <input type="text" id="search-bar" placeholder="Search apps by name or description..." 
+                           class="w-full pl-11 pr-4 py-3 bg-gray-900/60 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all">
+                </div>
+                
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap gap-2 border-b border-white/5 pb-2 md:pb-0 md:border-b-0">
+                    <button class="tab-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all bg-primary-600 text-white" data-category="all">All Apps</button>
+                    <button class="tab-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5" data-category="utilities">Utilities</button>
+                    <button class="tab-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5" data-category="trackers">Trackers & Math</button>
+                    <button class="tab-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5" data-category="games">Games & Guides</button>
+                </div>
+            </div>
 
-                <!-- QR Scanner -->
-                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
-                    <div class="mb-6 relative w-20 h-20">
-                        <img src="https://play-lh.googleusercontent.com/ZG-I9pON--8CJXIFrjEvKFEozbTIPJR8KfsLS5rABJODsPtBC2Kzddh0rkCwWbLUXAw=s512" alt="QR Scanner Icon" class="rounded-2xl shadow-xl shadow-black/40">
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">QR & Barcode Scanner</h3>
-                    <p class="text-gray-400 text-sm mb-8 flex-grow">Lightning-fast scanning and code generation. Support for all major formats and instant processing.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.qrScanner" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
-                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
-                        Get it on Play
-                    </a>
-                </article>
-
-                <!-- Flashlight -->
-                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
-                    <div class="mb-6 relative w-20 h-20">
-                        <img src="https://play-lh.googleusercontent.com/ySgJS92qLeAHg55x7IzaqUT0EW7zZNsZdTyRvZjmQyZSGj6fQHvhK5Y2H55N3k5ODuTGCr9WMumh91edA5LX=s512" alt="Flashlight Icon" class="rounded-2xl shadow-xl shadow-black/40">
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Quick Flashlight</h3>
-                    <p class="text-gray-400 text-sm mb-8 flex-grow">The brightest and fastest flashlight tool. One-tap activation with strobe and SOS features.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.quickflashlight" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
-                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
-                        Get it on Play
-                    </a>
-                </article>
-
-                <!-- Smart Ruler -->
-                <article class="glass-card p-8 rounded-3xl flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
-                    <div class="mb-6 relative w-20 h-20">
-                        <img src="https://play-lh.googleusercontent.com/V7YyYgwyKf3iha_HnV6WFYUdUY-9XtuEIPxlTsMXKjvdQy0zaVdvHJ9R4AU_2Xlso1SyBXac_n7P3hN3VvaAuA=s512" alt="Smart Ruler Icon" class="rounded-2xl shadow-xl shadow-black/40">
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Smart Ruler</h3>
-                    <p class="text-gray-400 text-sm mb-8 flex-grow">Precision measurement at your fingertips. Easy-to-use digital ruler for on-the-go dimensions.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.innoventiq.smartRuler" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all">
-                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
-                        Get it on Play
-                    </a>
-                </article>
+            <!-- Apps Cards Grid Container -->
+            <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 min-h-[300px]">
+                <!-- Cards injected here via JS -->
+            </div>
+            
+            <!-- Empty Search State -->
+            <div id="empty-state" class="hidden text-center py-16">
+                <i data-lucide="info" class="w-12 h-12 text-gray-500 mx-auto mb-4"></i>
+                <h3 class="text-xl font-bold text-white mb-2">No Apps Found</h3>
+                <p class="text-gray-400">Try adjusting your keywords or selecting another category.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact section -->
-    <section id="contact" class="pb-24 px-6">
+    <!-- Details Modal Dialog -->
+    <dialog id="app-details-modal" closedby="any" aria-labelledby="modal-app-title">
+        <div class="relative max-h-[90vh] flex flex-col">
+            <!-- Header bar inside Modal -->
+            <div class="p-6 border-b border-white/5 flex items-center justify-between sticky top-0 bg-gray-900/95 backdrop-blur-md z-10">
+                <div class="flex items-center gap-4">
+                    <img id="modal-app-icon" src="" alt="App Icon" class="w-16 h-16 rounded-2xl shadow-lg border border-white/10">
+                    <div>
+                        <h3 id="modal-app-title" class="text-xl md:text-2xl font-display font-bold text-white leading-tight">App Title</h3>
+                        <p id="modal-app-category" class="text-xs text-primary-400 uppercase tracking-widest font-semibold mt-1">Category</p>
+                    </div>
+                </div>
+                <button onclick="closeDetailsModal()" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center border border-white/15 text-white hover:text-primary-400 transition-colors" aria-label="Close modal">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <!-- Body content inside Scrollable Container -->
+            <div class="overflow-y-auto p-6 space-y-6 flex-grow">
+                <!-- App description -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">About the App</h4>
+                    <p id="modal-app-desc" class="text-gray-300 leading-relaxed text-sm md:text-base">Detailed description goes here...</p>
+                </div>
+                
+                <!-- Screenshots Gallery -->
+                <div id="modal-screenshots-container">
+                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Screenshots</h4>
+                    <div id="modal-screenshot-gallery" class="screenshot-gallery flex gap-4 overflow-x-auto pb-4 scroll-snap-x snap-mandatory">
+                        <!-- Screenshots injected here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer badge / download bar -->
+            <div class="p-6 border-t border-white/5 bg-gray-950/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-gray-500">Available exclusively on Google Play Store</span>
+                <a id="modal-play-store-link" href="" target="_blank" class="px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg shadow-primary-900/40">
+                    <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+                    Get it on Google Play
+                </a>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Support section -->
+    <section id="contact" class="py-16 px-6">
         <div class="container mx-auto">
-            <div class="glass-card p-12 rounded-[2.5rem] bg-gradient-to-br from-gray-900 to-primary-900/20 text-center" data-aos="fade-up">
+            <div class="glass-card p-10 md:p-14 rounded-[2.5rem] bg-gradient-to-br from-gray-900 to-primary-900/10 text-center relative overflow-hidden" data-aos="fade-up">
                 <i data-lucide="help-circle" class="w-12 h-12 text-primary-400 mx-auto mb-6"></i>
-                <h2 class="text-3xl font-display font-bold text-white mb-4">Need Support?</h2>
-                <p class="text-gray-400 mb-8 max-w-sm mx-auto">Have questions or feedback about our apps? We're here to help you get the most out of our tools.</p>
-                <a href="mailto:info@innoventiq.com" class="inline-flex items-center gap-3 text-2xl font-bold text-white hover:text-primary-400 transition-colors">
+                <h2 class="text-3xl font-display font-bold text-white mb-4">Need Assistance?</h2>
+                <p class="text-gray-400 mb-8 max-w-md mx-auto">Have queries, feature requests, or troubleshooting issues regarding our applications? Our support team is here to help.</p>
+                <a href="mailto:info@innoventiq.com" class="inline-flex items-center gap-3 text-xl md:text-2xl font-bold text-white hover:text-primary-400 transition-colors">
                     info@innoventiq.com
-                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-white/5 bg-gray-950">
+    <footer class="py-12 px-6 border-t border-white/5 bg-gray-950 mt-auto">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 bg-primary-500 rounded flex items-center justify-center text-white font-display font-bold text-xs">I</div>
+                    <div class="w-6 h-6 bg-primary-500 rounded flex items-center justify-center text-white font-display font-bold text-xs shadow-md shadow-primary-500/20">I</div>
                     <span class="text-lg font-display font-bold text-white">Innoventiq</span>
                 </div>
                 
@@ -213,7 +285,7 @@
                 </div>
                 
                 <p class="text-sm text-gray-600">
-                    &copy; <script>document.write(new Date().getFullYear())</script> Innoventiq Solutions. All rights reserved.
+                    &copy; <span id="current-year"></span> Innoventiq Solutions. All rights reserved.
                 </p>
             </div>
         </div>
@@ -222,23 +294,315 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Init Lucide Icons
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 11 Apps Data Array
+        const appsData = [
+            {
+                id: "com.innoventiq.compassTrueNorth",
+                title: "Compass: True North & GPS",
+                category: "utilities",
+                desc: "Accurate and reliable navigation in the palm of your hand. View true north, magnetic north, coordinates, and elevation with ease.",
+                icon: "https://play-lh.googleusercontent.com/ijIsb7g0AIX2SYfbgpLWLzGgXWpgHoKfZHyQDT16s_qCRNYah4IO-UKNiGqVOGd5kJs6OIGmsGxqmRNAL-mfYQ=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.compassTrueNorth",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/JF8ZP0MppI_kSdhiOeIfP5Z6OSeeMbvFhiTBB29ZNE-hwPUmPk_L83lFJTrGWgRlCH_I3D0ul4lTYdyA_jccEvI=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/SqkekgChqV8sianwJADJ8BYNTWoOTudsTbLBym2bYxcEQROyLdbl4jXB3q4WvHtK8RY=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.qrScanner",
+                title: "QR & Barcode Scanner",
+                category: "utilities",
+                desc: "Lightning-fast QR code and barcode scanner. Supports scanning from camera or gallery, exports scan history, and generates custom codes.",
+                icon: "https://play-lh.googleusercontent.com/GKc382Aa8YxCaWCtbogf0vx3d7ViNwn5Mu8-VDvEykfMuj0tftHKcf2koxNzuyF9Mz_YSOuePC68Ct_0FZ2c=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.qrScanner",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/sz_rwXnJmYIBLPtMyg3RtnRSvyBaG91EhoMH5b6tknoW0C6U-CKVNbMuPDVBgbC2OcLopQb2DpYOMgGnomYRrw=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.quickflashlight",
+                title: "Quick Flashlight",
+                category: "utilities",
+                desc: "The brightest and fastest flashlight tool. Features instant one-tap activation, strobe frequencies, and an SOS emergency signal.",
+                icon: "https://play-lh.googleusercontent.com/ySgJS92qLeAHg55x7IzaqUT0EW7zZNsZdTyRvZjmQyZSGj6fQHvhK5Y2H55N3k5ODuTGCr9WMumh91edA5LX=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.quickflashlight",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/kBXrgnPO24b3hUWe6Jpn6NOZEWOwePxBdSk_Ml-ZFa_aGF8XX5NLty1uuQ4x_flh5BFCE_BrjauJzAS8j2rkrR4=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/vCbVo7zauHcNGkUs3Kv4M_Xot9e1jox8c167Si_mc8TTmhVCTHujgUKKTdtMSwOkVLvRZjBk4esMgcvp7nZalA=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/09TUXfCijrPHerZxenknbtlduaQzOEEMdub77ED6K9YwwPKrWhHKSAGQzfkENewtWQ-Dk5FueXo2wBm4mSx3sg=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/S6RGRe9K4tXsKkoCTPcQHj6PFQrLgNvNo8LRCfakSjrF07_CFLVSE2_Uz6-Ttlocwd0_fDyAAE1wVpL0F57qUg=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/By0dNZqKF5-K7s_ZOkUcghUR_omUVjkbVvr3ebMJepMvjVe7cNgyQdYPTZT_P8_H4lF3qOUG26KMdfIylmBNhJ4=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.smartRuler",
+                title: "SmartRuler: Easy Ruler Tool",
+                category: "utilities",
+                desc: "Precision physical measurement tool using your screen. Calibrate with coins or cards for exact measurements in inches and centimeters on the fly.",
+                icon: "https://play-lh.googleusercontent.com/V7YyYgwyKf3iha_HnV6WFYUdUY-9XtuEIPxlTsMXKjvdQy0zaVdvHJ9R4AU_2Xlso1SyBXac_n7P3hN3VvaAuA=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.smartRuler",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/Y-b-2mxToRkOji_EiIV4uA6YRQ3MLRAzxPJCIiwzUD980mzSX5jdFabDZxgHOXFVS6RqSAWcxESxCd5kYK7Xy3s=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/R22C4m_3FPIbSxxNVBSXFZHRgmKQnEFQw5otOOSvBxgsBywA8QqCDAzyFchHm6uXMy9enqlgk0dBsvkoAVeRnw=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.aquaLog",
+                title: "AquaLog Aquarium Water Tracker",
+                category: "trackers",
+                desc: "Keep track of your aquarium's water parameters, testing logs, livestock additions, and filter changes with easy-to-read historical logs.",
+                icon: "https://play-lh.googleusercontent.com/ZHLuIyiEIoxCpstXThL5WiuQoQG2q1hBsFIm-gdBFbUf0QmgQ8dJ7vppsIvhmjvVevlZuXxvQ-ZjBalA9Gam=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.aquaLog",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/UYF-XhCIX7hH8rI-k_7tlvV7q8AAd1L5-pm-pjBLzIpM-XudM0iu0lfiQ6D3Eu8Wqi2fqE1bU6bgG4UwXTNtzw=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/38xbokudrZRLqYB_IuuxmewV6SP_P3ag1C2Tc01k1no66l6FtgMwv3AOfJfjjBBxAeXesOnUvo5dV9S8BEjCSDI=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/cG_aia1TCx-xwfIuQxqZrqxtEXHq3HzbVSCrX8QPAbnT716E9rDVZyU8VX5V6tB_embdo3Djz0IcqI-VjXRdvMc=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/xoEVlfX7SAi6x54LtZdxj94BnKGs73TSvJkQ-XbGnczy2VQZJhe_RLZilAOiiHDNklXxSys5g8gMQVdkeU16Cw=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.bin_stack",
+                title: "BinStack Inventory Tracker",
+                category: "trackers",
+                desc: "Organize your warehouse, storage rooms, or home supplies. Scan barcodes and log bins, rows, and stacks for highly efficient stock tracking.",
+                icon: "https://play-lh.googleusercontent.com/9519j6KJPHjs1AdlY6_eyZ2T-epMlVILBMMzOje05LEuDfpmSY8QwKMuM66EF7SZg6wKxPQz_AdAUC9ljrfIBg=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.bin_stack",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/C4QcWs2Rhea9S02NJqEdmCxKGOKKmgfx-0OBBt2y4pOO9FIJsZDcvpMapY4VA4CzlCZwi1JQjPV5Y7EuS5nG=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/tdhj9BJeDzfl_siv9Mfg1U4c0XXkN4Bh-Fwe-z6ToV__CUQBrVG6JFVTmL1nVS4-VR94X6fyIG9W4PB-Rgxozw=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/DriwWp22uutEk1R4ZMIpli5JGndN5hHVEFbo74B_c4KB-Ft6_17ozCgSoa-pYrukn3BxbYOrMDyNzdmdsUXgvA=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/gfkVG_7TXb-WwbDLDFkcWtr5bTbkxD4PQ321jb2TTpGYKzRqfKYpsswSztMr_OTQhxhYXkFjKBGhK5ia5_gPag=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/_RpqXbSITm6-7MhPX9AeV_JVFtyitlnVOhu_b_FlapKxwcSDtdrRvbdhUwwCoxbrdV0P6FVFTDP2hWSFTGdCIIQ=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.baker_calc",
+                title: "BakerCalc: Baker Percentages",
+                category: "trackers",
+                desc: "An essential helper for bread bakers. Compute baker's percentages, scaling factors, sourdough hydration ratios, and flour blends seamlessly.",
+                icon: "https://play-lh.googleusercontent.com/X-0jehJzhs_wPnCOi2SYfBHhg6YYdOLJ6WeDpb1kdKMLToFXfvE_ZgTDqNtOLEMmGUbyNGyi0ilHrQUEYAtTozc=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.baker_calc",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/jcEbO96RPgGF5nF4C9WtSU61l4EuOleWZK0X0cIhtZPh0foMAxdU4TbdK7qOf9MaFkI-7_bsKoJ0EaDjd5GM=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/LS-bgV9KZATGgydPkexIU7b9nKB8LpEc6GqBKWUv7BRvyEy6Q8vTW1dv4Kv_4IEEYbSf9A78HF8BsBP-3K8Ui7A=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/CmIbJ8sqqMU85mNg1hwueuLv5_uYsw-Dg3QFfklnCsFVeJp9e9WqhOGTipTzULV6jq1sSXPaQLZOQdD01KMa8A=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/fKzABftFSFTzq4hXvU1zmYUPQnfG7DEFoqD-4BHgPne1iesOicU2bWodTRq-ccK8VPnoyFgCTQdhTpSnqGmxljc=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/NQcCKjRA7hF8VaiQNldV80p0YEFWcK7TWSdO_hSD4rjyj4Skx3BxyBqf7BX6FJyPrbEgYlxrBqOjBkCkh8Q-kQ=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.core_return",
+                title: "Core Return Tracker",
+                category: "trackers",
+                desc: "Track auto parts core deposits, parts returns, refunds, and supplier returns. The ultimate tracker for mechanics and automotive stores.",
+                icon: "https://play-lh.googleusercontent.com/1-FfKpbNOqGRdM8mk_LLToLoZAIVQOj_egCi9pMIqA6_FcivAsJJSpP0WGazqx3jQPBPUm7R1KzIQ74TbrnXuw=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.core_return",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/LX3pe44zltp9Vz-6-j-H_UuTQ5_R5yH5oh06K01YiGSnuD7AoLzs66joURe8VLGljLCVsgdg1jRXRX4Q3UIZ=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/AsyA5ZbOjcsQRzvZhv9rzw_dx2qza5Uml93DkmCcb2ekxllJ8FeSxcLHRNQdDKm9zQTXYEIC7ONBU-AHGYin_g=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/Rb6MIZusJo3NTMZr05wkH6FnyBgPiVoLIMiGqb6nNwgAN6sYAga3VEg0gDThTL-9M6nrdPnbeISxFHsPldveDg=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/6-nhZcp3gAW0S6kr2_Dw90b7fJ6OgYZD7F57kf3JBfjOVVk4zvsjJwgqzFlTFOQPmIBjGOR8h-DplwSRI6K2Wg=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/PMNvewtABCkHkMXVcSHb8LTNF93_6ho8D0dahI3dhapwnnLYp85PNDfzrjI5j4V9bwfD6Twa69TIa1ToaUTxuno=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.filter_buddy",
+                title: "Filter Buddy: HVAC Tracker",
+                category: "trackers",
+                desc: "Never miss an air filter replacement. Manage multiple locations, log filter dimensions, log replacements, and set smart reminders.",
+                icon: "https://play-lh.googleusercontent.com/OQItbXWguYQ7Jn5FGB5LLjhzL2qYOjQ_z9p3WaGv-aJI008UEfptJ9lnRRzswGvpI7yKkv_Y3scuKteWfZMT=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.filter_buddy",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/EV-g0hp39Kf5F9DJmeTWb6zgGNqd5zIki6quqthUygB5cRwIJZcmupkMD6LpyMuC3IhZb6a25zvaTQHB2W7Hxw=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/KVrj-M2G4AYBdDm7EM1Q0N_Anqrps0cyT8kOiCuN4JO7Z4eFpdqlS6Lanm2al6VfSFLtqqskbgDfml5sD1V5XQ=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/zPvORhufctXV05PJZsDJldF5QH5Y3MSygbN6XfyXMhoGFLR8XG-N3FE1pXDvqnDemYZQYekYcCF8VwaI_RuA6w=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/pMyvzN6WAlO-wCJ3fTgtEyuNXcMIcz0ucXeRyUWM-3B3dfkf9f_ZztrzADdTK5QNSU3RD0KIX06R_PWFGy8O7A=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/xTiIelHZNOT-a7FpXytK_jEIhBcsapzIg7bQ4_WXnevDyVCL-qzFzxm8H1GE1d0VrWnIgN83vQU0HPPDGF7bzQ=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.colorSorter",
+                title: "Zen Color Sort: Puzzle Game",
+                category: "games",
+                desc: "A beautifully relaxing liquid color sorting puzzle. Train your brain, manage tube limits, and enjoy smooth physics animations and clean sounds.",
+                icon: "https://play-lh.googleusercontent.com/SCRyBLxx5CjYTwlXF3a35gryWe1FoSKAdpvsjIKWi94tXKliBt5FCUqjokR2ZRWVkFpdmDF8GtUqj-XHM75osA=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.colorSorter",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/4-05g0zjwCKom1y-1aPTfzYwsNLYTpbcFh2iRmfbO3UGYsqmP9jMqSnLQWxxjQV55W0O2wW4SIJpq37R59hj=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/8kUtsFU4tctRYysdA0cJuG_2eOlKmmKD9Wa5U6RUS6lJ__0s0I_cMXF_yZWEjxZOEJcj7KDTGbomS1M1y6K18JE=w526-h296-rw"
+                ]
+            },
+            {
+                id: "com.innoventiq.litogamingapp",
+                title: "LitoGaming Guide Black Desert",
+                category: "games",
+                desc: "The ultimate companion guide for Black Desert. Browse database stats, skill profiles, alchemy recipes, and map markings offline.",
+                icon: "https://play-lh.googleusercontent.com/LVajypnKv3VbKQxsVhX5rnfFs5OnphpQUX8AKpZwrGJWzz5Q334kfqxMHUP5sKOp4LjVixeCcX81mFuCINCr1Q=s180-rw",
+                playUrl: "https://play.google.com/store/apps/details?id=com.innoventiq.litogamingapp",
+                screenshots: [
+                    "https://play-lh.googleusercontent.com/O7ez1wbHh2apGSLAwPsJY15HLmuLd_57yd-ytZGPqrlM5QvCnJypCvXllzW8WqSJoWVfVDhKKfiiN3VonM1__2A=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/4FXTMkSUTaeocrKw2l8Dp19_HL-3mRrJRe238bANWYbcQ2lvp_qECKGqVYU2tFIjEE2sIhU24zASMfpNnlSsOTI=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/EIUDTf8J6ee1fSMtWYCRt-wm9jWtim3K3gP6vPDuK6ggFPq0v4thxbSvynpMqsatmyzC_gzOZZFVW5_nZ3b65A=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/V8jZoKvP-bJXg3h-7GFr-DlunvsYmsN7i1vzkOko4xOzI2d1qvPJt8Bhh8hRFxzfqzijXEc3vaaAZJgmzTO4Ng=w526-h296-rw",
+                    "https://play-lh.googleusercontent.com/DcSKaPn1hWM0aGqVLVn9suxlummrjYrcgCy9Y65WhbmcXtrurRVonP72RDsHLNPJSfnIFxcXYl9T6l-KU0lVMg=w526-h296-rw"
+                ]
+            }
+        ];
+
+        let activeCategory = "all";
+        let searchQuery = "";
+
+        const searchBar = document.getElementById("search-bar");
+        const appsGrid = document.getElementById("apps-grid");
+        const emptyState = document.getElementById("empty-state");
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const modal = document.getElementById("app-details-modal");
+
+        // Initialize display
+        function renderApps() {
+            appsGrid.innerHTML = "";
+            let filteredApps = appsData.filter(app => {
+                const matchesCategory = activeCategory === "all" || app.category === activeCategory;
+                const matchesSearch = app.title.toLowerCase().includes(searchQuery) || app.desc.toLowerCase().includes(searchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filteredApps.length === 0) {
+                emptyState.classList.remove("hidden");
+                appsGrid.classList.add("hidden");
+            } else {
+                emptyState.classList.add("hidden");
+                appsGrid.classList.remove("hidden");
+                
+                filteredApps.forEach((app, index) => {
+                    const card = document.createElement("article");
+                    card.className = "glass-card p-6 rounded-3xl flex flex-col h-full";
+                    card.setAttribute("data-aos", "fade-up");
+                    card.setAttribute("data-aos-delay", `${(index % 4) * 100}`);
+                    
+                    card.innerHTML = `
+                        <div class="mb-5 relative flex items-center justify-between">
+                            <img src="${app.icon}" alt="${app.title} Icon" class="w-16 h-16 rounded-2xl shadow-md border border-white/10 flex-shrink-0" loading="lazy">
+                            <span class="px-2.5 py-1 bg-white/5 border border-white/10 text-gray-400 rounded-lg text-[10px] font-bold uppercase tracking-wider">${app.category}</span>
+                        </div>
+                        <h3 class="text-lg font-display font-bold text-white mb-2 leading-snug">${app.title}</h3>
+                        <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed line-clamp-3">${app.desc}</p>
+                        <div class="flex flex-col gap-2 mt-auto">
+                            <button onclick="openDetailsModal('${app.id}')" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-semibold rounded-xl transition-all">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                                View Gallery
+                            </button>
+                            <a href="${app.playUrl}" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl transition-all shadow-md shadow-primary-900/10">
+                                <i data-lucide="play" class="w-4 h-4 fill-white text-white"></i>
+                                Get on Google Play
+                            </a>
+                        </div>
+                    `;
+                    appsGrid.appendChild(card);
+                });
+                // Re-initialize dynamic icons inserted inside cards
+                lucide.createIcons();
+            }
+        }
+
+        // Search listener
+        searchBar.addEventListener("input", (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            renderApps();
+        });
+
+        // Tab click listeners
+        tabBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                tabBtns.forEach(b => {
+                    b.className = "tab-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5";
+                });
+                btn.className = "tab-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all bg-primary-600 text-white";
+                activeCategory = btn.getAttribute("data-category");
+                renderApps();
+            });
+        });
+
+        // Modal Functions
+        function openDetailsModal(appId) {
+            const app = appsData.find(a => a.id === appId);
+            if (!app) return;
+
+            document.getElementById("modal-app-icon").src = app.icon;
+            document.getElementById("modal-app-title").textContent = app.title;
+            document.getElementById("modal-app-category").textContent = app.category;
+            document.getElementById("modal-app-desc").textContent = app.desc;
+            document.getElementById("modal-play-store-link").href = app.playUrl;
+
+            // Render Screenshots
+            const gallery = document.getElementById("modal-screenshot-gallery");
+            const galleryContainer = document.getElementById("modal-screenshots-container");
+            gallery.innerHTML = "";
+
+            if (app.screenshots && app.screenshots.length > 0) {
+                galleryContainer.classList.remove("hidden");
+                app.screenshots.forEach(src => {
+                    const img = document.createElement("img");
+                    img.src = src;
+                    img.alt = `${app.title} Screenshot`;
+                    img.className = "h-[340px] md:h-[400px] object-contain rounded-xl border border-white/5 snap-start shadow-md bg-gray-950";
+                    img.loading = "lazy";
+                    gallery.appendChild(img);
+                });
+            } else {
+                galleryContainer.classList.add("hidden");
+            }
+
+            // Play icon triggers check
+            lucide.createIcons();
+            
+            // Show modal natively
+            modal.showModal();
+        }
+
+        function closeDetailsModal() {
+            modal.close();
+        }
+
+        // Fallback for click outside standard Dialog element (Light Dismiss for Safari / older browsers)
+        if (!('closedBy' in HTMLDialogElement.prototype)) {
+            modal.addEventListener('click', (event) => {
+                if (event.target !== modal) return;
+                const rect = modal.getBoundingClientRect();
+                const isDialogContent = (
+                    rect.top <= event.clientY &&
+                    event.clientY <= rect.top + rect.height &&
+                    rect.left <= event.clientX &&
+                    event.clientX <= rect.left + rect.width
+                );
+                if (!isDialogContent) {
+                    modal.close();
+                }
+            });
+        }
+
+        // Init page
+        renderApps();
         lucide.createIcons();
-        
-        // Init AOS
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: true,
             easing: 'ease-out-cubic',
         });
-
-        // Smooth scroll for nav links
+        
+        // Smooth scroll for anchors
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
