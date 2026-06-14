@@ -14,6 +14,7 @@
 - Created `MEMORY.md` and `RULES.md` on 2026-06-14 to persist workspace memory and agent rules.
 - Updated `RULES.md` on 2026-06-14 to include rules for checking/updating memory and auto committing/pushing updates.
 - Generated `app_ideas_plan.md` on 2026-06-14 containing 3 low-competition utility app ideas.
+- Created `detailed_app_specifications.md` on 2026-06-14 detailing the specifications, names, package IDs, and UI/UX screens for MotoHour, RiseLog, and CribGuard.
 
 ## Project Files
 - `index.html`: Main landing page displaying the app portfolio.
@@ -21,3 +22,5 @@
 - `assets/`: Contains logo, favicon, and image assets.
 - `MEMORY.md`: This file. Keeps track of state, tasks, and changes.
 - `RULES.md`: Custom agent guidelines and rules.
+- `detailed_app_specifications.md`: Detailed app specifications and functional requirements.
+
